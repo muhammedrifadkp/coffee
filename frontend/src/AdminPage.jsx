@@ -18,7 +18,7 @@ const AdminPage = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        fetch('http://localhost:5000/login', {
+        fetch('https://coffee-1-koav.onrender.comlogin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
@@ -40,14 +40,14 @@ const AdminPage = () => {
     };
 
     const fetchProducts = () => {
-        fetch('http://localhost:5000/products')
+        fetch('https://coffee-1-koav.onrender.comproducts')
             .then(res => res.json())
             .then(data => setProducts(data));
     };
 
     const handleDelete = (id) => {
         if (window.confirm('Are you sure?')) {
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://coffee-1-koav.onrender.comproducts/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': token }
             }).then(() => fetchProducts());
@@ -57,7 +57,7 @@ const AdminPage = () => {
     const handleSave = (e) => {
         e.preventDefault();
         const method = isEditing ? 'PUT' : 'POST';
-        const url = isEditing ? `http://localhost:5000/products/${currentProduct.id}` : 'http://localhost:5000/products';
+        const url = isEditing ? `https://coffee-1-koav.onrender.comproducts/${currentProduct.id}` : 'https://coffee-1-koav.onrender.comproducts';
 
         fetch(url, {
             method,
