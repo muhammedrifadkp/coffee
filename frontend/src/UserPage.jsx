@@ -5,7 +5,7 @@ const UserPage = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://coffee-1-koav.onrender.comproducts')
+        fetch('https://coffee-1-koav.onrender.com/')
             .then(res => res.json())
             .then(data => setProducts(data))
             .catch(err => console.error('Error fetching products:', err));
